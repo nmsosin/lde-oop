@@ -1,32 +1,3 @@
-const fetchConfig = {
-  baseUrl: 'http://37.220.80.108',
-  headers: {
-    "Content-Type": "application/json",
-  },
-  type: "fetch"
-}
-
-const xhrConfig = {
-  baseUrl: 'http://37.220.80.108',
-  headers: {
-    "Content-Type": "application/json",
-  },
-  type: "xhr"
-}
-
-const updatedTaskInfo = {
-    "name": "This is the new name for task 23",
-    "isCompleted": "false",
-    "isImportant": "true",
-}
-
-const brandNewTask = {
-    "name": "OMG WOW YAY",
-    "info": "Looks like it works... IT WORKS!!!",
-    "isImportant": true,
-}
-
-
 // fetch
 class FetchRequest {
   constructor (config) {
@@ -163,17 +134,3 @@ export class Api {
   }
 
 }
-
-// const api = new Api(fetchConfig);
-// console.log(api.getTasks().then(data => console.log(data)));
-// console.log(api.getTaskById(19).then(data => console.log(data)));
-// console.log(api.updateTaskById(19, updatedTaskInfo).then(data => console.log(data)));
-// console.log(api.addTask(brandNewTask).then(data => console.log(data)));
-// console.log(api.deleteTaskById(18).then(data => console.log(data)));
-
-
-// const xhrapi = new Api(xhrConfig);
-// console.log(xhrapi.getTasks().then(data => console.log(data)));
-// console.log(xhrapi.getTaskById(23).then(data => console.log(data)));
-// console.log(xhrapi.updateTaskById(23, updatedTaskInfo).then(data => console.log(data)));
-// console.log(xhrapi.addTask(brandNewTask).then(data => console.log(data)));

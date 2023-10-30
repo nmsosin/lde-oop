@@ -16,27 +16,30 @@ const xhrConfig = {
   type: "xhr"
 }
 
-
-const form = document.querySelector('.form');
 const idInput = document.querySelector('.input-id');
 const nameInput = document.querySelector('.input-name');
 const infoInput = document.querySelector('.input-info');
 const requestTypeRadio = document.querySelectorAll('.radio-button');
 const isImportantInput = document.querySelector('.checkbox');
 
+const buttons = document.querySelectorAll('button')
 const getTasksButton = document.querySelector('.get-tasks');
 const getTaskByIdButton = document.querySelector('.get-task-by-id');
 const updateTaskButton = document.querySelector('.update-task-by-id');
 const addTaskButton = document.querySelector('.add-task');
 const deleteTaskButton = document.querySelector('.delete-task');
 
-let requestType = 'fetch';
+let requestType;
 let api
 
 for (const radio of requestTypeRadio) {
-  
+  if (!radio.checked) {
+    buttons.forEach((button) => button.disabled = true)
+  }
+
   radio.addEventListener('change', () => {
     if (radio.checked) {
+      buttons.forEach((button) => button.disabled = false)
       requestType = radio.value;
       requestType === "fetch" ? api = new Api(fetchConfig) : api = new Api(xhrConfig);
     }  
